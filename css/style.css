@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ol,ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    max-width: 1200px;
+    width: 95%;
+}
+.clear-both{
+    clear: both;
+}
+.btn{
+    height: 30px;
+    padding: 0 15px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    transition: 0.4s;
+}
+.btn:hover{
+    opacity: 0.7;
+}
+.btn-red{
+    background-color: red;
+    color: white;
+}
+.btn-blue{
+    background-color: blue;
+    color: white;
+}
+/* ############################################################## */
+/* header start */
+.login{
+    /* position: relative; Позицианируется относительно документа */
+    /* position: fixed; Позицианируется относительно окна */
+    /* position: sticky; Прилипает */
+    position: relative;
+    top: 0;
+    left: 0px;
+    width: 100px;
+    height: 35px;
+    background: lightblue;
+    border-radius: 25%;
+    border: none;
+    overflow: hidden;
+}
+
+.login::before{
+    position: absolute;
+    content: 'G';
+    top: 4px;
+    right: 5px;
+    font-size: 1.3rem;
+    color: red;
+    transition: 1s;
+}
+
+.login:hover::before{
+    transform: rotateY(180deg); 
+}
+.login::after{
+    position: absolute;
+    top: -10px;
+    left: -15px;
+    content: "";
+    width: 1px;
+    height: 50px;
+    background-color: white;
+    transform: rotate(30deg);
+    animation: line linear 2s infinite;
+}
+@keyframes line{
+    100%{
+        transform:translateX(125px) rotate(30deg);
+    }
+}
+.header{
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 50px;
+}
+.menu>li{
+    display: inline-block;
+    position: relative;
+}
+.menu>li>ol{
+    position: absolute;
+    display: none;
+}
+.menu>li:hover>ol{
+    display: block;
+}
+.menu a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 35px;
+    background-color: rgb(238, 219, 212);
+    color: rgb(193, 117, 117);
+    transition: 0.4s;
+}
+.menu a:hover{
+    background-color: rgb(212, 183, 172);
+    color: rgb(202, 100, 100);
+}
+/* header end */
+/* article start */
+.article__img{
+    width: 200px;
+    float: left;
+    margin-right: 7px;
+}
+.article__box{
+    margin-bottom: 20px;
+}
+.article__title{
+    margin-bottom: 10px;
+}
+.article__info{
+    text-align: justify;
+}
+.bold+b{
+    color: red;
+}
+.bold~b{
+    text-transform: uppercase;
+}
+/* article end */
+/* products start */
+.products{
+    display: grid;
+    grid-template-rows: repeat(2,auto);
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
+.products__img{
+    width: 100%;
+}
+.products__box{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 15px;
+}
+@media (max-width:768px){
+    .products{
+        grid-template-rows: repeat(3,auto);
+        grid-template-columns: repeat(2,1fr);
+    }  
+}
+@media (max-width:540px){
+    .products{
+        grid-template-rows: repeat(6,auto);
+        grid-template-columns: 1fr;
+    }  
+}
+/* products end */
+/* table start */
+.table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.table td,.table th{
+    padding: 5px 0;
+    border: 1px solid black;
+}
+.table td{
+    text-align: center;
+}
+.table thead,.table tfoot,.table tbody:hover{
+    background-color: yellow;
+}
+/* table end */
+/* form start */
+.form{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.comments{
+    resize: none;
+}
+.input{
+    height: 30px;
+    width: 150px;
+    padding-left: 7px;
+    box-shadow: 2px 2px 7px 1px grey;
+}
+.input::placeholder{
+    color: red;
+}
+
+/* form end */
+/* visual-section start*/
+.visual-section{
+    min-height: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.visual-section1{
+    background-image: url("../images/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-image_438818.jpg");
+
+}
+.visual-section2{
+    background-image: url("../images/1957d609bdba509.jpg");
+}
+/* visual-section end */
